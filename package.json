@@ -1,0 +1,36 @@
+{
+	"name": "Cheesecake",
+	"description": "WebCam S3 upload using saycheese.js",
+	"version": "0.1.0",
+	"homepage": "https://github.com/aaron/Cheesecake",
+	"author": {
+		"name": "exinferis",
+		"email": "exinferis@github.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/aaron/Cheesecake.git"
+	},
+	"bugs": {
+		"url": "https://github.com/aaron/Cheesecake/issues"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/aaron/Cheesecake/blob/master/LICENSE-MIT"
+		}
+	],
+	"main": "server",
+	"engines": {
+		"node": ">= 0.6.0"
+	},
+	"devDependencies": {
+		"grunt": "~0.3.17",
+		"grunt-contrib-coffee": ">=0.0.1",
+		"grunt-contrib-copy": ">=0.0.1"
+	},
+	"dependencies": {
+		"express": ">=3.0.0"
+	},
+	"keywords": []
+}
