@@ -119,7 +119,7 @@ class CheeseCake
 						return
 
 					xhr.onprogress = ( progress ) =>
-						console.log "Progress!", progress
+						# do something fancy here - maybe an animated progress bar?
 						return
 
 					xhr.open "POST", "http://#{res.Bucket}.s3.amazonaws.com", true

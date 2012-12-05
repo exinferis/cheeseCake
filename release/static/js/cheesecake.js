@@ -126,9 +126,7 @@
                 }
               }
             };
-            xhr.onprogress = function(progress) {
-              console.log("Progress!", progress);
-            };
+            xhr.onprogress = function(progress) {};
             xhr.open("POST", "http://" + res.Bucket + ".s3.amazonaws.com", true);
             xhr.send(formData);
           } catch (e) {
