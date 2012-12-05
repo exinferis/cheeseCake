@@ -92,7 +92,7 @@ class CheeseCake
 		$( ".action-takepicture" ).fadeOut()
 
 		if @images[_id]?
-			_fName = "pic_#{moment().valueOf().toString( 16 )}"
+			_fName = "pic_#{moment().valueOf().toString( 16 )}#{randomnumber=Math.floor(Math.random()*10000000).toString(6)}"
 			@_requestCredentials( @format, _fName, ( res ) =>
 				# building html5 / formdata object for use with xhr transport
 				formData = new FormData

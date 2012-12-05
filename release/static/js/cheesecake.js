@@ -96,13 +96,13 @@
     };
 
     CheeseCake.prototype._createUploadForm = function(event) {
-      var _fName, _id,
+      var randomnumber, _fName, _id,
         _this = this;
       _id = $(event.currentTarget).attr("id");
       $("#" + _id).append("<span class='ajaxloader'></span>");
       $(".action-takepicture").fadeOut();
       if (this.images[_id] != null) {
-        _fName = "pic_" + (moment().valueOf().toString(16));
+        _fName = "pic_" + (moment().valueOf().toString(16)) + (randomnumber = Math.floor(Math.random() * 10000000).toString(6));
         this._requestCredentials(this.format, _fName, function(res) {
           var formData, xhr;
           formData = new FormData;
