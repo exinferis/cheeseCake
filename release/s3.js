@@ -12,7 +12,7 @@
       this.createCredentials = __bind(this.createCredentials, this);
       this.Secret = root.config.s3.secret;
       this.Key = root.config.s3.key;
-      this.Bucket = root.config.bucket;
+      this.Bucket = root.config.s3.bucket;
       return;
     }
 

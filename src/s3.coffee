@@ -4,7 +4,7 @@ module.exports =
 		constructor: ->
 			@Secret = root.config.s3.secret
 			@Key = root.config.s3.key
-			@Bucket = root.config.bucket
+			@Bucket = root.config.s3.bucket
 			return
 
 		# creating the s3 credentials for the upload form
