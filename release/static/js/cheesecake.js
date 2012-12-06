@@ -58,7 +58,7 @@
         this.images = _.omit(this.images, _toRemoveid);
         $("#previewimages .thumblistitem:first").remove();
       }
-      $("#previewimages").append("<li class='thumblistitem' id='thumb_" + _id + "'><a href='#' class='thumbnail' id='" + _id + "'><span class='marker hide'></span></a></li>");
+      $("#previewimages").append("<li class='thumblistitem' id='thumb_" + _id + "'><span lass='thumbnail' id='" + _id + "'><span class='marker hide'></span></span></li>");
       $("#" + _id).append(snapshot);
       $("#" + _id).on("click", this._createUploadForm);
     };

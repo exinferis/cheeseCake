@@ -34,6 +34,17 @@ The sources of cheeseCake are mainly written in coffeescript. I have set up a gr
 Now the grunt service will listen on changes in your files and will recompile your coffee files if something changes and will copy the output files to the ```release/``` folder, thus forcing the node-dev service to restart.
 
 
+## Compatibility
+Should work in:
+
+* Firefox Nightly, Aurora, Beta (does not seem to be stable atm)
+* Google Chrome
+* Opera
+* Firefox caveats
+
+**From the say-cheese documentation:**  
+The beta release of Firefox supports a lower resolution compared to Opera and Chrome. This has been improved in Aurora and Nightly and may hopefully work its way into stable in the next version or two.
+
 ## Examples
 _(Coming soon)_
 
