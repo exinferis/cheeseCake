@@ -38,7 +38,7 @@ app.get( "/", ( req, res ) ->
 )
 
 app.get( "/image", ( req, res ) ->
-	res.end( "<img src='http://letestbucket.s3.amazonaws.com/#{req.query["key"]}'>" )
+	res.end( "<img src='http://#{root.config.s3.bucket}.s3.amazonaws.com/#{req.query["key"]}'>" )
 	return
 )
 
