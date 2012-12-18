@@ -23,7 +23,7 @@ app.post( "/credentials", ( req, res ) ->
 
 		s3.createCredentials( mimetype, file, ( err, result ) ->
 			res.header( "Access-Control-Allow-Origin", "*" )
-			res.header( "Content-Type", "application/JSON" )
+			res.header( "Content-Type", "application/json" )
 			res.end( JSON.stringify( result ) )
 			return
 		)
@@ -38,7 +38,7 @@ app.get( "/", ( req, res ) ->
 )
 
 app.get( "/image", ( req, res ) ->
-	res.end( "<img src='http://letestbucket.s3.amazonaws.com/#{req.query["key"]}'>" )
+	res.end( "<img src='http://#{root.config.s3.bucket}.s3.amazonaws.com/#{req.query["key"]}'>" )
 	return
 )
 
