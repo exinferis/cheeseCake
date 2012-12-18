@@ -23,7 +23,7 @@ app.post( "/credentials", ( req, res ) ->
 
 		s3.createCredentials( mimetype, file, ( err, result ) ->
 			res.header( "Access-Control-Allow-Origin", "*" )
-			res.header( "Content-Type", "application/JSON" )
+			res.header( "Content-Type", "application/json" )
 			res.end( JSON.stringify( result ) )
 			return
 		)
