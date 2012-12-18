@@ -20,20 +20,6 @@ node release/server.js
 ```
 in the application directory. Cheesecake will now happily answer your request under http://[servername]:3333/
 
-
-## Documentation
-If you are planning to experiment or develop using this little piece of software (which would be cool) you can user the files located under ```src/```
-
-The sources of cheeseCake are mainly written in coffeescript. I have set up a grunt.js file ([Grunt](http://gruntjs.com/)) which will make it a bit easier for you to get started developing. Just execute the following steps to get your development environment set up:
-
-* cd into your app directory (not ```src``` or ```release```)
-* Install node-dev using ```npm install -g node-dev``` (maybe needing sudo)
-* run the server app ```node-dev release/server.js```
-* start grunt using ```grunt watch```
-
-Now the grunt service will listen on changes in your files and will recompile your coffee files if something changes and will copy the output files to the ```release/``` folder, thus forcing the node-dev service to restart.
-
-
 ## Compatibility
 Should work in:
 
