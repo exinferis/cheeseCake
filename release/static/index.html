@@ -92,9 +92,15 @@
 
 			<!-- Main hero unit for a primary marketing message or call to action -->
 			<div class="row-fluid">
+				<h2>Webcam access and image upload to S3 via client-side POST</h2>
 				<p>
-					Take a picture of yourself and put it on S3 - thats all there is about it<br>
-					<strong>Will only run in the latest and greatest browsers, Chrome and Firefox. Please allow your browser to access your webcam in order to use this module</strong>
+					<ul>
+						<li>Take a picture with your webcam</li>
+						<li>Upload it to S3 (by creating a <a href="http://blog.tcs.de/post-file-to-s3-using-node/">server-side signature with NodeJS</a>)</li>
+						<li>Thats all there is about it</li>
+					</ul>
+
+					<strong>Will only run in the latest and greatest browsers, Chrome and Firefox. Please allow your browser to access your webcam in order to use this module.</strong>
 				</p>
 				<div id="camframe" class="thumbail">
 					<a class="btn btn-success btn-large action-takepicture btn-action hide">Take picture &raquo;</a>
@@ -103,7 +109,7 @@
 				
 			</div>
 			<hr>
-				<h4>Click on any previously taken picture to start the upload process</h4>
+				<h4>Click on any picture to start the upload process</h4>
 				<div class="row-fluid">
 					<ul class="thumbnails" id="previewimages">
 						
@@ -114,10 +120,10 @@
 			<footer>
 				<h3>Information & Credits</h3>
 				<p>	
-					A large thanks has to go to Lee Machin (<a href="http://leemach.in" target="blank">Website</a>) for providing say-cheese.js, which is at the base of cheeseCake. For for information about say-cheese please visit <a href="https://github.com/leemachin/say-cheese" target="blank">https://github.com/leemachin/say-cheese</a>
+					Big thanks go to Lee Machin (<a href="http://leemach.in" target="blank">Website</a>) for providing say-cheese.js. For for information about say-cheese please visit <a href="https://github.com/leemachin/say-cheese" target="blank">https://github.com/leemachin/say-cheese</a>
 				</p>
 				<p>
-					When reading about say-cheese on <a href="news.ycombinator.com" target="blank">HN</a> we knew decided that say-cheese would suit the demands of one of our projects perfectly if it would be possible to extract an image from the canvas and save it to S3 for further use. This is why we built cheeseCake as it does exactly that - converting the captured webcam image stored in a canvas into an image and pushing the image to S3 using a node.js based backend.
+					After finding say-cheese on <a href="http://news.ycombinator.com/item?id=4816769" target="blank">Hacker News</a> we decided that it would suit the demands of one of our projects perfectly if it would be possible to extract an image from the canvas and save it to S3 for further use. This is why we built cheeseCake as it does exactly that - converting the captured webcam image stored in a canvas into an image and pushing the image to S3 using a node.js based backend.
 				</p>
 				<p>
 					<strong>Now tell me - what happens exactly?</strong><br>
@@ -139,7 +145,7 @@
 						Once we have received a valid response with the S3 data in question we start the upload using the XHR transport. Since we use XHR transport, CORS needs to be set up on your S3 bucket in order for the upload to work properly. Have a look at how we build our upload: <a href="https://gist.github.com/4217117" target="blank">Gist</a>
 					</li>
 				</ul>	
-				<p>&copy; Team Centric Software, <a href="mailto:xxexinferisxx@gmail.com">Exinferis</a></p>
+				<p>Created by <a href="mailto:xxexinferisxx@gmail.com">Exinferis</a></p>
 				<!-- Place this tag where you want the badge to render. -->
 				<div class="g-plus" data-height="69" data-href="//plus.google.com/116448399461560172806" data-rel="author"></div>
 
@@ -154,8 +160,7 @@
 			</footer>
 
 		</div> <!-- /container -->
-
-		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.js"><\/script>')</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="js/underscore.js"></script>
 		<script src="js/moment.js"></script>
 		<script src="js/saycheese.js"></script>
