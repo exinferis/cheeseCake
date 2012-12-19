@@ -77,7 +77,7 @@ class CheeseCake
 				mimetype: mimetype
 				file: file
 			success: ( res )=>
-				cb( JSON.parse( res ) )
+				cb( res )
 				return
 			error: ( err ) =>
 				alert( "An error occurred receiving the S3 credentials from the server." )

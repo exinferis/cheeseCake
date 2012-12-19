@@ -92,16 +92,16 @@
 
 			<!-- Main hero unit for a primary marketing message or call to action -->
 			<div class="row-fluid">
-				<h2>Webcam access and image upload to S3 via client-side POST</h2>
+				<h1>Upload webcam images to S3</h1>
 				<p>
-					<ul>
-						<li>Take a picture with your webcam</li>
-						<li>Upload it to S3 (by creating a <a href="http://blog.tcs.de/post-file-to-s3-using-node/">server-side signature with NodeJS</a>)</li>
-						<li>Thats all there is about it</li>
-					</ul>
-
-					<strong>Will only run in the latest and greatest browsers, Chrome and Firefox. Please allow your browser to access your webcam in order to use this module.</strong>
+					<strong>Will only run in the latest and greatest browsers, Chrome and Firefox. Please allow your browser to access your webcam.</strong>
 				</p>
+				<ul>
+					<li>Take one or more pictures.</li>
+					<li>Click a thumbnail to upload the image to S3 (don't worry, we delete the files after 48h).
+					<li>After the click we convert the canvas to an image and request a S3 policy and signature from a server. The client then uploads the file directly to S3.
+					<li>That's it. For details read below or check out the project on Github</li>
+				</ul>
 				<div id="camframe" class="thumbail">
 					<a class="btn btn-success btn-large action-takepicture btn-action hide">Take picture &raquo;</a>
 					<div class="row"><a class="btn btn-primary btn-large action-reset hide btn-action">Reset and upload again! &raquo;</a></div>
@@ -109,7 +109,7 @@
 				
 			</div>
 			<hr>
-				<h4>Click on any picture to start the upload process</h4>
+				<h4>Click on any previously taken picture to start the upload process</h4>
 				<div class="row-fluid">
 					<ul class="thumbnails" id="previewimages">
 						
@@ -120,32 +120,24 @@
 			<footer>
 				<h3>Information & Credits</h3>
 				<p>	
-					Big thanks go to Lee Machin (<a href="http://leemach.in" target="blank">Website</a>) for providing say-cheese.js. For for information about say-cheese please visit <a href="https://github.com/leemachin/say-cheese" target="blank">https://github.com/leemachin/say-cheese</a>
-				</p>
-				<p>
-					After finding say-cheese on <a href="http://news.ycombinator.com/item?id=4816769" target="blank">Hacker News</a> we decided that it would suit the demands of one of our projects perfectly if it would be possible to extract an image from the canvas and save it to S3 for further use. This is why we built cheeseCake as it does exactly that - converting the captured webcam image stored in a canvas into an image and pushing the image to S3 using a node.js based backend.
-				</p>
-				<p>
-					<strong>Now tell me - what happens exactly?</strong><br>
-					Sure, will do. <br>
-					We use say-cheese to offer the possibilty to capture images from your webcam as soon as you permit this. Using the webcam via say-cheese is using the underlying getUserMedia which currently is only supported in Chrome and the latest Firefox versions. <br>
+					Thanks to go to Lee Machin for providing <a href="https://github.com/leemachin/say-cheese" target="_blank">say-cheese.js</a>.
 				</p>
 				<ul>
 					<li>
-						After you have captured some images you may click one to be uploaded to S3. We will then convert the images canvas to a base64 data URI using <code>toDataURL()</code>
+						After you have captured some images you may click one thumbnail to be uploaded to S3. We will then convert the images canvas to a base64 data URI using <code>toDataURL()</code>
 					</li>
 					<li>	
 						The base64 data URI could be used in an images source (<code>&lt;img src="[dataURI here]...</code>) but since we want an image to be stored we need to convert the data URI to a correct binary intepretation of the image data. This can be accomplished using javascript blobs. We are using a method called <code>dataURItoBlob()</code> for this. You can have a closer look <a href="https://gist.github.com/4216618" target="blank">here</a> for the coffeescript implementation and <a href="https://gist.github.com/4216799" target="blank">here</a> for the compiled javascript. The method is based on the excellent answer in <a href="http://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata" target="blank">this</a> stackoverflow post.
 					</li>
 					<li>
-						After converting the image we call our node.js based backend using an ajax POST request in order to receive a valid S3 signature and policy. You can read more about S3 signatures and policies <a href="http://aws.amazon.com/articles/1434" target="blank">here</a>.<br>
-						Our node.js backend uses two small methods creating the policy and its signature for further use. You can have a close look at those two methods in <a href="https://gist.github.com/4216882" target="blank">this gist</a>
+						After converting the image we call a NodeJS based backend using an ajax POST request in order to receive a valid S3 signature and policy. You can read more about S3 signatures and policies <a href="http://aws.amazon.com/articles/1434" target="blank">here</a>.<br>
+						The backend uses two small methods for creating the policy and its signature for further use. You can have a closer look at those two methods in <a href="https://gist.github.com/4216882" target="blank">this gist</a>
 					</li>
 					<li>
-						Once we have received a valid response with the S3 data in question we start the upload using the XHR transport. Since we use XHR transport, CORS needs to be set up on your S3 bucket in order for the upload to work properly. Have a look at how we build our upload: <a href="https://gist.github.com/4217117" target="blank">Gist</a>
+						Once we have received a valid response we start the upload using the XHR transport. Since we use XHR transport, CORS needs to be set up on your S3 bucket in order for the upload to work properly. Have a look at how we build our upload: <a href="https://gist.github.com/4217117" target="blank">Gist</a>
 					</li>
 				</ul>	
-				<p>Created by <a href="mailto:xxexinferisxx@gmail.com">Exinferis</a></p>
+				<p>&copy; Team Centric Software, <a href="mailto:xxexinferisxx@gmail.com">Exinferis</a></p>
 				<!-- Place this tag where you want the badge to render. -->
 				<div class="g-plus" data-height="69" data-href="//plus.google.com/116448399461560172806" data-rel="author"></div>
 
@@ -160,6 +152,7 @@
 			</footer>
 
 		</div> <!-- /container -->
+
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="js/underscore.js"></script>
 		<script src="js/moment.js"></script>
@@ -167,7 +160,7 @@
 		<script src="js/cheesecake.js"></script>
 		<script>
 			$(function() {
-				var cheeseCake = new window.CheeseCake( { el: "#camframe" } );
+				var cheeseCake = new window.CheeseCake( { el: "#camframe", "s3provider": "http://ec2-79-125-66-252.eu-west-1.compute.amazonaws.com"} );
 			});
 		</script>
 	</body>

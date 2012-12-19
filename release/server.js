@@ -30,7 +30,7 @@
       file = req.body.file;
       s3.createCredentials(mimetype, file, function(err, result) {
         res.header("Access-Control-Allow-Origin", "*");
-        res.header("Content-Type", "application/JSON");
+        res.header("Content-Type", "application/json");
         res.end(JSON.stringify(result));
       });
     } else {
@@ -44,7 +44,7 @@
   });
 
   app.get("/image", function(req, res) {
-    res.end("<img src='http://letestbucket.s3.amazonaws.com/" + req.query["key"] + "'>");
+    res.end("<img src='http://" + root.config.s3.bucket + ".s3.amazonaws.com/" + req.query["key"] + "'>");
   });
 
   app.listen(3333);

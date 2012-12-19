@@ -87,7 +87,7 @@
           file: file
         },
         success: function(res) {
-          cb(JSON.parse(res));
+          cb(res);
         },
         error: function(err) {
           alert("An error occurred receiving the S3 credentials from the server.");
