@@ -17,7 +17,7 @@
 				padding-bottom: 40px;
 			}
 			.marker {
-				background-image: url("/static/img/marker2.png");
+				background-image: url("img/marker2.png");
 				background-position: left top;
 				background-repeat: no-repeat;
 				height: 51px;
@@ -49,7 +49,7 @@
 				opacity: 0.9;
 			}
 			.ajaxloader {
-				background-image: url("/static/img/ajax-loader.gif");
+				background-image: url("img/ajax-loader.gif");
 				width: 200px;
 				height: 15px;
 				position: absolute;
@@ -100,7 +100,7 @@
 					<li>Take one or more pictures.</li>
 					<li>Click a thumbnail to upload the image to S3 (don't worry, we delete the files after 48h).
 					<li>After the click we convert the canvas to an image and request a S3 policy and signature from a server. The client then uploads the file directly to S3.
-					<li>That's it. For details read below or check out the project on Github</li>
+					<li>That's it. For details read below or check out the <a href="https://github.com/exinferis/cheeseCake">project on Github</a>.</li>
 				</ul>
 				<div id="camframe" class="thumbail">
 					<a class="btn btn-success btn-large action-takepicture btn-action hide">Take picture &raquo;</a>
@@ -136,8 +136,11 @@
 					<li>
 						Once we have received a valid response we start the upload using the XHR transport. Since we use XHR transport, CORS needs to be set up on your S3 bucket in order for the upload to work properly. Have a look at how we build our upload: <a href="https://gist.github.com/4217117" target="blank">Gist</a>
 					</li>
+					<li>
+						Check out the <a href="https://github.com/exinferis/cheeseCake">project on Github</a>
+					</li>
 				</ul>	
-				<p>&copy; Team Centric Software, <a href="mailto:xxexinferisxx@gmail.com">Exinferis</a></p>
+				<p>&copy; <a href="http://www.tcs.de">TCS</a>, <a href="https://github.com/exinferis">Exinferis</a></p>
 				<!-- Place this tag where you want the badge to render. -->
 				<div class="g-plus" data-height="69" data-href="//plus.google.com/116448399461560172806" data-rel="author"></div>
 
